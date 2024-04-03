@@ -1,0 +1,142 @@
+ <html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  </head>
+  <body class="alert alert-dark">
+    <title><h3>RESUME BUILDER</h3></title>
+    <div class="container">
+      <form><h2>Resume Builder</h2>
+        <div class="row-2">
+          <label><b>Name</b></lable>
+          <input class="form-control" type="text" id="name_id" name="name" onkeyup="val(this)"> 
+          <label><b>Objective</b></lable>
+            <input class="form-control" type="text" id="objective" name="objective" onkeyup="val(this)"> 
+          <label><b>Email</b></lable>
+          <input class="form-control" type="email" name="email" onkeyup="val(this)"> 
+          <label><b>Mobile Number</b></lable>
+          <input class="form-control" type="number" name="number" onkeyup="val(this)"> 
+        </div>
+        <div class="row">
+          <b>Personal Details</b>
+          <label>Father Name</label>
+          <div class="col-3"><input class="form-control" type="text" name="father_name" onkeyup="val(this,'personal_details')"></div>
+          <label>Mother Name</label>
+          <div class="col-3"><input class="form-control" type="text" name="mother_name" onkeyup="val(this,'personal_details')"></div>
+          <label>Full Address</label>
+          <div class="col-6"><input class="form-control" type="text" name="address" onkeyup="val(this,'personal_details')"></div>
+          <label>District</label>
+          <div class="col-3"><input class="form-control" type="text" name="district" onkeyup="val(this,'personal_details')"></div>
+          <label>Pin Code</label>
+          <div class="col-2"><input class="form-control" type="number" name="pincode" onkeyup="val(this,'personal_details')"></div>
+          <div class="row">
+            <label><b>Skills</b></label>
+            <div class="col-3">
+              <input class="form-control" type="text" id="skill_list">
+              <button class="btn btn-success" type="button" onclick="add_item('skills','skill_list','skill_tbl')">ADD</button>
+              <div id="skill_tbl">
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-5">
+              <label><b>Language Known</b></label>
+              <input class="form-control" type="text" id="lang_list">
+              <button class="btn btn-success" type="button" onclick="add_item('languages','lang_list','lang_tbl')">ADD</button>
+              <div id="lang_tbl">
+              </div>
+            </div>
+            <div class="col-5">
+              <label><b>Hobbies</b></label>
+              <input class="form-control" type="text" id="hobby_list">
+              <button class="btn btn-success" type="button" onclick="add_item('hobbies','hobby_list','hobby_tbl')">ADD</button>
+              <div id="hobby_tbl">
+              </div>
+            </div>
+            </div>
+          </div>
+            <b>Educational Details</b>
+          <div class="row"><h6>(please enter <b>10th,12th,degree</b> in order)</h6>
+              <div class="col-3">
+                <input class="form=control" placeholder="Institute Name" id="institute_name" name="institute_name" onkeyup="add_edu(this)">
+              </div>
+              <div class="col-3">
+                <input class="form=control" placeholder="Level" id="level" name="level" onkeyup="add_edu(this)">
+              </div>
+              <div class="col-3">
+                <input class="form=control" placeholder="Year" id="year" name="year" onkeyup="add_edu(this)">
+              </div>
+              <div class="col-3">
+                <input class="form=control" placeholder="percentage" id="percentage" name="percentage" onkeyup="add_edu(this)">
+              </div>
+              <div class="col">
+                <button type="button" class="btn btn-success" onclick="add_item(null,null,null,'education')"> submit</button>
+              </div>
+              <table id="final_show" class="table table-warning table-borderless">
+                <tr id="heading" class="alert alert-danger">
+                  <td>Institute</td>
+                  <td>Level</td>
+                  <td>Year</td>
+                  <td>Percentage</td>
+                  <td>To remove data<td>
+                </tr>
+                <tbody id="edu_tbl">
+                  
+                </tbody>
+                
+              </table><hr>
+          </div>
+          <label><b>Certificates</b></label>
+          <div class="col-8">
+            <input class="form-control" type="text" id="certi_list">
+            <button class="btn btn-success" type="button" onclick="add_item('certificates','certi_list','certi_tbl')">ADD</button>
+            <div id="certi_tbl">
+            </div>
+            <label><b>Projects</b></label>
+            <div class="col">
+              <input class="form-control" type="text" id="proj_list">
+              <button class="btn btn-success" type="button" onclick="add_item('projects','proj_list','proj_tbl')">ADD</button>
+              <div id="proj_tbl">
+              </div>
+              <b>Experience</b>
+            <div class="row">
+                <div class="col-3">
+                  <input class="form=control" placeholder="Company Name" id="company_name" name="company_name" onkeyup="add_edu(this)">
+                </div>
+                <div class="col-3">
+                  <input class="form=control" placeholder="Position" id="position" name="position" onkeyup="add_edu(this)">
+                </div>
+                <div class="col-3">
+                  <input class="form=control" placeholder="Years" id="years" name="years" onkeyup="add_edu(this)">
+                </div>
+                <div class="row"></div>
+                <div class="col-3">
+                  <button type="button" class="btn btn-success" onclick="add_item(null,null,null,null,'experience')"> submit</button>
+                </div>
+                </div>
+                <table class="table table-warning table-borderless">
+                  <tr id="heading">
+                    <td>Company Name</td>
+                    <td>position</td>
+                    <td>Years</td>
+                    <td>To remove data<td>
+                  </tr>
+                  <tbody id="exp_tbl">
+                    
+                  </tbody>
+                  
+                </table><hr>
+              </div>
+          </div>
+        </div>
+      </form><br>
+      <div class="alert alert-primary"><code><pre id="show"></pre></code></div>
+      <div class="row">
+        <button type="button" class="alert alert-danger" onclick="sent_ajx()">submit</button>
+      </div>
+      <button type="button" class="alert alert-warning" onclick="redirect()">show list</button>
+    </div>
+    
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="resume_builder.js"></script>
+  </html>

@@ -1,0 +1,37 @@
+.name{
+    padding:50px ;
+    background-color: antiquewhite;
+}
+.tab{
+    padding-left:100px;
+}
+.split{
+    border:solid black;
+    height:46%;
+    width:48%;
+    display: inline-block;
+    
+}
+.split1{
+    border:solid black;
+    height:54%;
+    width:50%;
+    display: inline-block;
+    position:absolute;
+    margin-left:10px;    
+}
+#tot{
+    display: inline-block;
+}
+#into_prgrm_skill{
+    display: inline-block;
+    padding: 1px 0px;
+    width:164%;
+}
+#prgrm_skill{
+    display: inline-block;
+    width:24%
+}
+#button{
+    margin-left: 90%;
+}
